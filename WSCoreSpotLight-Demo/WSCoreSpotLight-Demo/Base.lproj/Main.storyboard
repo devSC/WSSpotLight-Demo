@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Ic-Ep-ZPk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="u0h-kx-IS4">
+            <objects>
+                <navigationController id="8Ic-Ep-ZPk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0oo-he-QL9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="q5n-Bg-M92"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBJ-Ep-Id8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-403" y="362"/>
+        </scene>
+        <!--SuperMarket-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your vegetable name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kx5-Vh-P7B">
+                                <rect key="frame" x="20" y="79" width="471" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oNj-xB-ywK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCo-Xb-NRc">
+                                <rect key="frame" x="511" y="79" width="69" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2GI-am-odx"/>
+                                    <constraint firstAttribute="width" constant="69" id="eF0-Em-pEK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fk4-Hk-OY2"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-PK-rem">
+                                <rect key="frame" x="0.0" y="117" width="600" height="483"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DIi-zs-NO0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ees-im-Tsj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kx5-Vh-P7B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Bfh-Ux-tg4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v9i-PK-rem" secondAttribute="bottom" id="M5L-eQ-IVp"/>
+                            <constraint firstItem="oCo-Xb-NRc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="MhL-OC-f7Z"/>
+                            <constraint firstItem="v9i-PK-rem" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ONx-Ed-3sn"/>
+                            <constraint firstItem="v9i-PK-rem" firstAttribute="top" secondItem="oCo-Xb-NRc" secondAttribute="bottom" constant="8" id="Ypr-kb-YK5"/>
+                            <constraint firstAttribute="trailing" secondItem="v9i-PK-rem" secondAttribute="trailing" id="beT-U6-2HS"/>
+                            <constraint firstItem="oCo-Xb-NRc" firstAttribute="top" secondItem="Kx5-Vh-P7B" secondAttribute="top" id="hbL-5W-mB1"/>
+                            <constraint firstItem="oCo-Xb-NRc" firstAttribute="leading" secondItem="Kx5-Vh-P7B" secondAttribute="trailing" constant="20" id="mmt-Wy-MBD"/>
+                            <constraint firstItem="oCo-Xb-NRc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qUO-en-mH2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SuperMarket" id="KMG-wZ-Ttm"/>
+                    <connections>
+                        <outlet property="addButton" destination="oCo-Xb-NRc" id="fAM-VB-cdR"/>
+                        <outlet property="tableView" destination="v9i-PK-rem" id="kiy-I3-a9A"/>
+                        <outlet property="textField" destination="Kx5-Vh-P7B" id="8e4-28-MNn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="362"/>
+        </scene>
+    </scenes>
+</document>
